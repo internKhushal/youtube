@@ -64,7 +64,7 @@ export default function VideoBox(props) {
     // setloading(true);
     async function getchannel() {
       const res = await axios.get('http://localhost:8001/api/user/find/' + props.videodata.userId)
-      console.log(res.data);
+      // console.log(res.data);
       setchannel(res.data)
 
     }
@@ -80,9 +80,9 @@ export default function VideoBox(props) {
         </ChannelImage>
 
         <ChilDesc>
-          <VideoTitle style={{ color: `${darkMode ? theme.text : theme.bg}` }}>{props.videodata.title}</VideoTitle>
-          <ChannelName style={{ color: `${darkMode ? theme.text : theme.bg}` }}>{channel ? channel.name : 'channel_name'} <CheckCircleOutlineIcon style={{ fontSize: 'small' }} /></ChannelName>
-          <ViewandTime style={{ color: `${darkMode ? theme.text : theme.bg}` }}>
+          <VideoTitle style={{ color: `${darkMode ? theme.text : 'black'}` }}>{props.videodata.title}</VideoTitle>
+          <ChannelName style={{ color: `${darkMode ? theme.text : 'black'}` }}>{channel ? channel.name : 'channel_name'} <CheckCircleOutlineIcon style={{ fontSize: 'small' }} /></ChannelName>
+          <ViewandTime style={{ color: `${darkMode ? theme.text : 'black'}` }}>
             <ViewsCount>{props.videodata.views} views</ViewsCount> •
             <UploadTime>{format(props.videodata.createdAt)}</UploadTime>
           </ViewandTime>

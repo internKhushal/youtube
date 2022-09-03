@@ -62,7 +62,7 @@ export default function VideoViewPage(props) {
   // }
   let videoplayeref = useRef(null);
   function gesturecontrol(type) {
-    if (type != "") {
+    if (type !== "") {
       console.log(videoplayeref);
       switch (type) {
         case "full_hand_open":
@@ -112,10 +112,18 @@ export default function VideoViewPage(props) {
   }, [videoid]);
 
   const handleLike = () => {
+    if (dislike) {
+      setLike(!like)
+      setDislike(!dislike)
+    }
     setLike(!like);
   }
 
   const handleDislike = () => {
+    if (like) {
+      setDislike(!dislike)
+      setLike(!like)
+    }
     setDislike(!dislike);
   }
 

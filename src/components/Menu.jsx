@@ -57,6 +57,8 @@ export default function Menu() {
   let currentuser = useSelector((state) => state.currentuser);
   // const [videoadddialog, setvideoadddialog] = useState(false);
   const { darkMode, setdarkMode } = useContext(DarkModeContext);
+  console.log("-----" + darkMode);
+
 
   return (
     <Container>
@@ -104,9 +106,8 @@ export default function Menu() {
         </Link>
         <Item
           style={{ fontSize: "13px" }}
-          onClick={(ev) => {
+          onClick={() => {
             setdarkMode(!darkMode);
-            console.log(darkMode);
           }}
         >
           <DarkModeIcon></DarkModeIcon>
