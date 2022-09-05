@@ -183,7 +183,7 @@ export default function NavBar(props) {
               <img alt="im"
                 src={currentuser.user.img}
                 style={{ height: "25px", width: "25px", borderRadius: "10px" }}></img>
-              {currentuser.user.name}
+              {currentuser.user.name}<Button>LogOut</Button>
             </div>
           ) : (
             <Link to="/login">

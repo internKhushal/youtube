@@ -71,6 +71,7 @@ export default function VideoViewPage(props) {
         case "victory":
           videoplayeref.current.pause();
           break;
+
       }
     }
   }

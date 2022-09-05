@@ -23,7 +23,7 @@ import { Link } from "react-router-dom";
 //   border-radius: 30px;
 // `;
 
-
+import { useNavigate } from "react-router-dom";
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -43,6 +43,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function LoginPage() {
+  const navigate = useNavigate();
 
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
@@ -69,6 +70,7 @@ export default function LoginPage() {
           dispatch(loginFail());
         } else {
           dispatch(loginSucces(res.data));
+          navigate('/')
         }
         setloading(false);
       })
@@ -86,6 +88,7 @@ export default function LoginPage() {
       axios.post('http://localhost:8001/api/auth/google', result, { withCredentials: true }).then((res) => {
         console.log(res.data)
         dispatch(loginSucces(res.data))
+        navigate('/')
       })
     })
       .catch((err) => {
